@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hệ thống Giám sát và Điều khiển bãi đỗ xe thông minh — Đăng nhập</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <main class="app-root">
+    <!-- phần trái chứa vùng login và blurred panel phía sau -->
+    <div class="left-panel">
+      <div class="bg-panel" aria-hidden="true"></div>
+      <div class="login-container" role="main" aria-labelledby="login-title">
+        <div class="brand">
+          <h1 id="login-title">Hệ thống Giám sát và Điều khiển<br/><span>bãi đỗ xe thông minh</span></h1>
+        </div>
+
+        <!-- action trỏ tới API backend -->
+        <form id="loginForm" class="login-form" method="POST" action="/api/auth/login" novalidate>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required />
+            <div class="error" id="emailError" aria-live="polite"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Mật khẩu</label>
+            <input id="password" name="password" type="password" placeholder="Mật khẩu" required minlength="6" />
+            <div class="error" id="passwordError" aria-live="polite"></div>
+          </div>
+
+          <div class="form-row">
+            <label class="checkbox">
+              <input id="remember" name="remember" type="checkbox" />
+              Ghi nhớ đăng nhập
+            </label>
+            <a class="link" href="/forgot">Quên mật khẩu?</a>
+          </div>
+
+          <button id="btnLogin" type="submit" class="btn primary">Đăng nhập</button>
+
+          <div id="serverMsg" class="server-msg" aria-live="polite"></div>
+        </form>
+      </div>
+    </div>
+
+    <!-- phần phải có họa tiết trên background.jpg (không cần nội dung, chỉ để background hiển thị) -->
+    <div class="right-visual" aria-hidden="true"></div>
+  </main>
+
+  <script src="js/login.js"></script>
+</body>
+</html>

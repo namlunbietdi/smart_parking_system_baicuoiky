@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dashboard — Hệ thống Giám sát & Điều khiển bãi đỗ xe thông minh</title>
+
+    <!-- Sử dụng Noto Sans cho tiếng Việt (fallback về Arial nếu muốn) -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+<main class="app-root">
+    <div class="left-panel">
+        <div class="bg-panel" aria-hidden="true"></div>
+
+        <div class="menu-container" role="navigation" aria-label="Menu chính">
+            <div class="brand">
+                <h1>Hệ thống Giám sát<br/><span>bãi đỗ xe thông minh</span></h1>
+            </div>
+
+            <nav class="menu-grid" role="tablist" aria-label="Các mục chính">
+                <button class="menu-card active" data-view="control" role="tab" aria-selected="true" aria-controls="view-control">
+                    <div class="card-head">
+                        <span class="icon"><img src="assets/icons/control.png" alt="Control icon" /></span>
+                    </div>
+                    <div class="card-title">1. Điều khiển hệ thống từ xa</div>
+                    <div class="card-desc">Gửi lệnh điều khiển (được quản lý bởi backend)</div>
+                </button>
+
+                <button class="menu-card" data-view="activity" role="tab" aria-selected="false" aria-controls="view-activity">
+                    <div class="card-head">
+                        <span class="icon"><img src="assets/icons/log_activity.png" alt="Log activity icon" /></span>
+                    </div>
+                    <div class="card-title">2. Log Activity</div>
+                    <div class="card-desc">Xem nhật ký thao tác và sự kiện hệ thống</div>
+                </button>
+
+                <button class="menu-card" data-view="vehicles" role="tab" aria-selected="false" aria-controls="view-vehicles">
+                    <div class="card-head">
+                        <span class="icon"><img src="assets/icons/list_car.png" alt="List car icon" /></span>
+                    </div>
+                    <div class="card-title">3. Danh sách xe</div>
+                    <div class="card-desc">Quản lý danh sách xe đã sử dụng bãi đỗ</div>
+                </button>
+            </nav>
+
+        </div>
+    </div>
+
+    <div class="right-visual" aria-hidden="true"></div>
+</main>
+
+<script src="js/dashboard.js"></script>
+</body>
+</html>

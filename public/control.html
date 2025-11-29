@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Điều khiển hệ thống — Bãi đỗ xe</title>
+
+    <!-- match dashboard font / style -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/control.css" />
+</head>
+<body>
+<main class="control-root">
+    <header class="control-header">
+        <h1>Điều khiển hệ thống</h1>
+        <p class="subtitle">Giám sát nhận diện biển số & điều khiển cửa</p>
+    </header>
+
+    <section class="control-layout">
+        <!-- Gate IN column -->
+        <article class="gate-col" id="gate-in">
+            <h2 class="gate-title">Cửa vào (Gate IN)</h2>
+
+            <div class="frame">
+                <!-- video / image placeholder (16:9) -->
+                <div class="video-frame">
+                    <!-- replace src with camera snapshot/stream url or <video> if available -->
+                    <img id="inFeed" src="assets/placeholder.png" alt="Video Gate IN feed" />
+                </div>
+
+                <!-- recognition result -->
+                <div class="recognition">
+                    <div class="plate" id="inPlate">—</div>
+                    <div class="meta" id="inMeta">Chưa có kết quả nhận diện</div>
+                </div>
+
+                <!-- manual controls -->
+                <div class="controls">
+                    <button class="btn btn-open" data-gate="gate_in" data-action="open">Mở cửa</button>
+                    <button class="btn btn-close" data-gate="gate_in" data-action="close">Đóng cửa</button>
+                </div>
+            </div>
+        </article>
+
+        <!-- Gate OUT column -->
+        <article class="gate-col" id="gate-out">
+            <h2 class="gate-title">Cửa ra (Gate OUT)</h2>
+
+            <div class="frame">
+                <div class="video-frame">
+                    <img id="outFeed" src="assets/placeholder.png" alt="Video Gate OUT feed" />
+                </div>
+
+                <div class="recognition">
+                    <div class="plate" id="outPlate">—</div>
+                    <div class="meta" id="outMeta">Chưa có kết quả nhận diện</div>
+                </div>
+
+                <div class="controls">
+                    <button class="btn btn-open" data-gate="gate_out" data-action="open">Mở cửa</button>
+                    <button class="btn btn-close" data-gate="gate_out" data-action="close">Đóng cửa</button>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <!-- Occupancy footer -->
+    <footer class="occupancy">
+        <div class="occupancy-inner">
+            <div class="slots">
+                <span>Tổng vị trí:</span>
+                <strong id="totalSlots">5</strong>
+            </div>
+            <div class="free">
+                <span>Vị trí còn trống:</span>
+                <strong id="freeSlots">5</strong>
+            </div>
+            <div class="occupied">
+                <span>Đang sử dụng:</span>
+                <strong id="occupiedSlots">0</strong>
+            </div>
+        </div>
+    </footer>
+
+    <div id="toast" class="toast" aria-live="polite" aria-atomic="true"></div>
+</main>
+
+<script src="js/control.js"></script>
+</body>
+</html>
